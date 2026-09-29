@@ -1,0 +1,168 @@
+{
+   "tab" : [
+      {
+         "label" : "自动保存设置",
+         "value" : [
+            {
+               "checked" : "checked",
+               "id" : "自动保存_开启自动保存源码",
+               "label" : "开启自动保存源码",
+               "punion" : "open",
+               "skin" : "primary",
+               "type" : "checkbox"
+            },
+            {
+               "checked" : "checked",
+               "id" : "自动保存_只提示1次",
+               "label" : "每个源码自动保存成功的提示信息只提示1次",
+               "skin" : "primary",
+               "type" : "checkbox",
+               "union" : "open"
+            },
+            {
+               "id" : "自动保存_调试运行",
+               "label" : "每次调试或编译时自动保存",
+               "skin" : "primary",
+               "type" : "checkbox",
+               "union" : "open"
+            },
+            {
+               "id" : "自动保存_间隔",
+               "label" : "保存间隔(秒)",
+               "maxvalue" : "3000",
+               "minvalue" : "10",
+               "placeholder" : "只对已保存的源码有效",
+               "type" : "text",
+               "union" : "open",
+               "value" : "30"
+            },
+            {
+               "id" : "仅空闲时执行自动保存",
+               "label" : "仅在鼠标键盘空闲时(超过30秒)才执行自动保存",
+               "skin" : "primary",
+               "type" : "checkbox",
+               "union" : "open"
+            },
+            {
+               "skin" : "gray",
+               "text" : "自动备份功能是检测到当前源码文件MD5改变后才会触发备份功能，如果你还没有手动保存的习惯，建议开启 自动保存 功能，不要单方面只开启一个，防止意外！",
+               "type" : "quote"
+            }
+         ]
+      },
+      {
+         "label" : "自动备份设置",
+         "value" : [
+            {
+               "checked" : "checked",
+               "id" : "自动备份_开启自动备份源码",
+               "label" : "开启自动备份源码",
+               "punion" : "beifen",
+               "skin" : "primary",
+               "type" : "checkbox"
+            },
+            {
+               "checked" : "checked",
+               "id" : "启用状态夹备份管理",
+               "label" : "启用状态夹备份管理（重启后生效）",
+               "restart" : "restart",
+               "skin" : "primary",
+               "type" : "checkbox"
+            },
+            {
+               "id" : "自动备份_间隔",
+               "label" : "备份间隔(分)",
+               "placeholder" : "分钟自动备份1次，最小为1分钟",
+               "type" : "text",
+               "union" : "beifen",
+               "value" : "10"
+            },
+            {
+               "id" : "自动备份_最大备份",
+               "label" : "最大备份",
+               "placeholder" : "最大的备份数量，最小值为10，超过将替换较旧的",
+               "type" : "text",
+               "union" : "beifen",
+               "value" : "30"
+            },
+            {
+               "id" : "自动备份_格式",
+               "label" : "备份格式",
+               "type" : "select",
+               "union" : "beifen",
+               "value" : [
+                  {
+                     "text" : "名称_xx-xx-xx 12:00",
+                     "value" : "0"
+                  },
+                  {
+                     "text" : "名称_xx年x月x日 12:00",
+                     "value" : "1"
+                  }
+               ]
+            },
+            {
+               "id" : "自动备份_模式",
+               "label" : "备份模式",
+               "type" : "select",
+               "union" : "beifen",
+               "value" : [
+                  {
+                     "text" : "备份到指定路径下",
+                     "value" : "0"
+                  },
+                  {
+                     "text" : "备份到源码所在目录下 (下方的备份路径请无视)",
+                     "value" : "1"
+                  }
+               ]
+            },
+            {
+               "id" : "自动备份_路径",
+               "label" : "备份路径",
+               "placeholder" : "双击选择备份路径",
+               "type" : "file",
+               "union" : "beifen",
+               "value" : "{pt}backup\\"
+            },
+            {
+               "checked" : "checked",
+               "id" : "自动备份_关闭时",
+               "label" : "在关闭易语言时，自动备份一次源码",
+               "skin" : "primary",
+               "type" : "checkbox",
+               "union" : "beifen"
+            },
+            {
+               "type" : "hr"
+            },
+            {
+               "checked" : "checked",
+               "id" : "自动备份_启用黑名单",
+               "label" : "启用黑名单 (在黑名单中的源码名称将不会自动备份，每个一行，如：助手源码)",
+               "skin" : "primary",
+               "type" : "checkbox",
+               "union" : "heimingdan"
+            },
+            {
+               "id" : "自动备份_黑名单",
+               "label" : "黑名单列表，支持通配符，填写源码文件名即可；如 精易模块*",
+               "placeholder" : "如：精易模块*",
+               "type" : "textarea",
+               "union" : "heimingdan"
+            },
+            {
+               "label" : "备份路径说明",
+               "text" : "<p>{p} = 易语言根目录，如：D:\\program files (x86)\\e\\</p><p>{pt} = 易语言助手根目录，如：D:\\program files (x86)\\e\\lib\\eTools\\</p>",
+               "type" : "card"
+            },
+            {
+               "skin" : "gray",
+               "text" : "建议使用同步备份功能的网盘或软件将备份目录进行云端同步，以便及时方便的回档相关版本 <br>如【坚果云】；",
+               "type" : "quote"
+            }
+         ]
+      }
+   ],
+   "title" : "自动保存与保存"
+}

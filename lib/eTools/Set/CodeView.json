@@ -1,0 +1,146 @@
+{
+	"title" : "代码视图",
+		"tab":[
+		{
+			"label" : "基本设置",
+			"value" : [
+					{
+						"type" : "checkbox",
+						"skin" : "primary",
+						"id" : "定位后自动展开子程序",
+						"label" : "定位后自动展开子程序",
+						"checked" : "checked"
+					},{
+						"type" : "checkbox",
+						"skin" : "primary",
+						"id" : "启用代码视图列表自动排序",
+						"label" : "启用代码视图列表自动排序",
+						"restart" : "restart",
+						"checked" : "checked"
+					},{
+						"type" : "select",
+						"id" : "定位模式",
+						"label" : "定位模式",
+						"value" : [
+							{
+								"text" : "双击定位",
+								"value" : "1"
+							},{
+								"text" : "单击定位(会影响鼠标控制滚动条)",
+								"value" : "2"
+							},{
+								"text" : "Ctrl+单击定位",
+								"value" : "0"
+							}
+						]
+					},{
+						"type" : "select",
+						"id" : "默认显示模式",
+						"label" : "默认显示",
+						"value" : [
+							{
+								"text" : "变量视图",
+								"value" : "0"
+							},{
+								"text" : "子程序视图",
+								"value" : "1"
+							},{
+								"text" : "代码缩略图视图（待增加）",
+								"value" : "2"
+							}
+						]
+					},{
+						"type" : "select",
+						"id" : "默认视图状态",
+						"label" : "视图窗口",
+						"value" : [
+							{
+								"text" : "默认展开",
+								"value" : "0"
+							},{
+								"text" : "默认收缩",
+								"value" : "1"
+							}
+						]
+					},{
+						"type" : "select",
+						"id" : "呼出代码视图快捷键",
+						"label" : "呼出视图窗口",
+						"value" : [
+							{
+								"text" : "无",
+								"value" : "0"
+							},{
+								"text" : "Ctrl + ~",
+								"value" : "11"
+							},{
+								"text" : "Ctrl + 1",
+								"value" : "22"
+							},{
+								"text" : "Ctrl + F1",
+								"value" : "33"
+							},{
+								"text" : "Alt + ~",
+								"value" : "44",
+								"selected" : "selected"
+							},{
+								"text" : "Alt + F1",
+								"value" : "55"
+							},{
+								"text" : "Alt + F2",
+								"value" : "66"
+							}
+							]
+						}
+				]
+		},{
+			"label" : "个性化设置",
+			"value" : [
+					{
+						"type" : "checkbox",
+						"skin" : "primary",
+						"id" : "变量子夹数据英文展现",
+						"restart" : "restart",
+						"label" : "变量子夹数据英文展现"
+					},{
+						"type" : "checkbox",
+						"skin" : "primary",
+						"id" : "自动背景",
+						"pprohibit":"open",
+						"label" : "自动设置背景(跟随易语言配色改变)"
+					},{
+						"type" : "color",
+						"label" : "文字颜色",
+						"id" : "快速定位文字颜色",
+						"placeholder" : "树形框中的文字颜色（HTML颜色格式）",
+						"prohibit":"open",
+						"value" : "#000000"
+					},{
+						"type" : "color",
+						"label" : "背景颜色",
+						"id" : "快速定位背景颜色",
+						"placeholder" : "树形框中的背景颜色（HTML颜色格式）",
+						"value" : "#FFFFFF"
+					},{
+						"type" : "text",
+						"label" : "视图宽度",
+						"id" : "选择夹宽度",
+						"placeholder" : "视图选择夹的默认宽度（最低150）",
+						"value" : "300",
+						"maxvalue" : "600",
+						"minvalue": "150"
+					},{
+						"type" : "button",
+						"id" : "打开图标目录",
+						"event" : "run",
+						"param" : "lib/eTools/Plugin/CodeView/",
+						"label" : "打开图标目录"
+					},{
+						"type" : "card",
+						"label" : "自定义图标说明",
+						"text" : "<p>1、图标文件请按序号替换，需要更改哪个图标就按尺寸做一个替换即可</p><p>2、不能删除图标，否则会造成插件异常；</p><p>点击上方按钮打开目录进行修改，修完后可以发出来展示下哦</p>"
+					}
+				]
+		}
+	]
+}

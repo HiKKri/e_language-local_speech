@@ -1,0 +1,45 @@
+{
+	"title" : "插件中心",
+	"tab":[
+		{
+			"label" : "插件中心",
+			"value" : [
+							{
+							"type" : "quote",
+							"skin" : "gray",
+							"text" : "敬请期待····"
+							}
+						]
+		},{
+			"label" : "插件开发教程",
+			"value" : [
+							{
+							"type" : "card",
+							"label" : "同步更新插件开发文档与例题",
+							"text" : "请先点击下方的【同步更新SDK】按钮，更新完成后，点击【打开SDK目录】查看相关内容，更多文字补充请查看下方的帖子与视频"
+							},{
+								"type" : "button",
+								"id" : "同步更新SDK",
+								"label" : "同步更新SDK",
+								"event" : "run",
+								"param" : "lib/eTools/up.exe Data/SDK.keys"
+							},{
+								"type" : "button",
+								"id" : "打开SDK目录",
+								"label" : "打开SDK目录",
+								"event" : "run",
+								"param" : "lib/eTools/SDK/"
+							},{
+							"type" : "card",
+							"label" : "请查看本帖",
+							"text" : " 易语言助手插件开发综合介绍贴与SDK开发包下载<br> <a href=\"http://bbs.125.la/forum.php?mod=viewthread&tid=14416380 \" >http://bbs.125.la/forum.php?mod=viewthread&tid=14416380 </a>"
+							},{
+							"type" : "card",
+							"label" : "插件开发视频教程",
+							"text" : " <a href=\"https://www.eyuyan.tv/p2888 \" >易语言助手插件开发教程第一课 </a><br><br>更多内容正在准备中·····"
+							}
+						]
+			}
+		]
+}
+

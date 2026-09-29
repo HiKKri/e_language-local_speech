@@ -1,0 +1,84 @@
+{
+    "title": "",
+    "option": [{
+            "color": "#FF6633",
+            "label": "流程线样式",
+            "type": "separate"
+        },
+        {
+            "type": "select",
+            "id": "主流程线样式",
+            "label": "主流程线样式",
+            "value": [{
+                    "text": "虚线",
+                    "value": "0"
+                },
+                {
+                    "text": "实线",
+                    "value": "1"
+                }
+            ]
+        },
+        {
+            "type": "select",
+            "id": "子流程线样式",
+            "label": "子流程线样式",
+            "value": [{
+                    "text": "虚线",
+                    "value": "0"
+                },
+                {
+                    "text": "实线",
+                    "value": "1"
+                }
+            ]
+        },
+        {
+            "color": "#FF6633",
+            "label": "流程线配色（重启后生效）",
+            "type": "separate"
+        },
+        {
+            "type": "color",
+            "label": "流程线配色1",
+            "id": "配色1",
+            "punion": "open",
+            "value": "#FF0000"
+        },
+        {
+            "type": "color",
+            "label": "流程线配色2",
+            "id": "配色2",
+            "punion": "open",
+            "value": "#9000FF"
+        },
+        {
+            "type": "color",
+            "label": "流程线配色3",
+            "id": "配色3",
+            "punion": "open",
+            "value": "#0088FF"
+        },
+        {
+            "type": "color",
+            "label": "流程线配色4",
+            "id": "配色4",
+            "punion": "open",
+            "value": "#FFA8FF"
+        },
+        {
+            "type": "color",
+            "label": "流程线配色5",
+            "id": "配色5",
+            "punion": "open",
+            "value": "#00E080"
+        },
+        {
+            "type": "color",
+            "label": "流程线配色6",
+            "id": "配色6",
+            "punion": "open",
+            "value": "#000000"
+        }
+    ]
+}

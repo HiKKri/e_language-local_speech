@@ -1,0 +1,34 @@
+{
+    "title": "易代码行号插件设置",
+    "option": [
+        {
+            "type": "color",
+            "label": "背景颜色",
+            "id": "背景颜色",
+            "placeholder": "行号背景颜色",
+            "value": "#ECECEC"
+        },        
+		{
+            "type": "color",
+            "label": "通常文本颜色",
+            "id": "通常文本颜色",
+            "placeholder": "正常状态下的行号颜色",
+            "value": "#0000FF"
+        },        
+		{
+            "type": "color",
+            "label": "行号焦点颜色",
+            "id": "行号焦点颜色",
+            "placeholder": "焦点状态下的行号颜色",
+            "value": "#FF0000"
+        },        
+		{
+            "type": "color",
+            "label": "行号展开颜色",
+            "id": "行号展开颜色",
+            "placeholder": "代码展开后的行号颜色",
+            "value": "#FF8000"
+        }
+        
+    ]
+}

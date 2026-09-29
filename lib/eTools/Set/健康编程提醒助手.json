@@ -1,0 +1,51 @@
+{
+    "title": "健康编程提醒助手",
+    "option": [{
+				"type": "checkbox",
+				"skin": "primary",
+				"id": "喝水小助手",
+				"label": "开启喝水提醒",
+				"checked": "checked"
+			},{
+				"type": "checkbox",
+				"skin": "primary",
+				"id": "护眼小助手",
+				"label": "开启护眼提醒（45分钟）",
+				"checked": "checked"
+			},{
+				"type": "checkbox",
+				"skin": "primary",
+				"id": "久坐提醒小助手",
+				"label": "开启久坐提醒（1小时）",
+				"checked": "checked"
+			},{
+				"type": "select",
+				"id": "喝水提醒模式",
+				"label": "喝水提醒模式",
+				"value": [{
+					"text": "整点提醒",
+					"value": "0",
+					"selected": "selected"
+				}, {
+					"text": "按打开源码时间提示（1小时）",
+					"value": "1"
+				}]
+			},{
+				"type": "select",
+				"id": "喝水弹窗模式",
+				"label": "喝水提醒弹窗",
+				"value": [{
+					"text": "右下角显示",
+					"value": "0",
+					"selected": "selected"
+				}, {
+					"text": "居中显示",
+					"value": "1"
+				},{
+					"text": "随机显示",
+					"value": "2"
+				}]
+			
+		}
+	]
+}

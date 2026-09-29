@@ -1,0 +1,266 @@
+{
+	"title" : "输出框扩展设置",
+	"tab":[
+			{
+			"label" : "输出框扩展",
+			"value" : [
+						{
+							"type" : "checkbox",
+							"skin" : "primary",
+							"id" : "启用输出扩展",
+							"label" : "启用输出扩展",
+							"checked" : "checked",
+							"restart" : "restart",
+							"punion" : "open"
+						},{
+							"type" : "hr",
+							"color" : "green"
+						},{
+							"type" : "checkbox",
+							"skin" : "primary",
+							"id" : "是否同步S",
+							"label" : "是否同步易语言配色",
+							"restart" : "restart"
+						},{
+							"type" : "checkbox",
+							"skin" : "primary",
+							"id" : "清空输出框提示确认",
+							"label" : "清空输出框提示确认",
+							"checked" : "checked",
+							"union" : "open"
+						},{
+							"type" : "checkbox",
+							"skin" : "primary",
+							"id" : "保留易语言所有输出信息",
+							"label" : "保留易语言所有输出信息",
+							"checked" : "checked",
+							"union" : "open"
+						},{
+							"type" : "checkbox",
+							"skin" : "primary",
+							"id" : "显示横向滚动条",
+							"label" : "显示横向滚动条（当前输出内容过多不换行，重启生效）",
+							"union" : "open"
+						},{
+							"type" : "select",
+							"label" : "内容输出方向",
+							"id" : "内容输出方向",
+							"value" : [
+								{
+									"text" : "向下输出",
+									"value" : "0",
+									"selected" : "selected"
+								},{
+									"text" : "向上输出",
+									"value" : "1"
+								}
+							]
+						},{
+						"type" : "text",
+						"label" : "分隔符",
+						"id" : "分隔符",
+						"placeholder" : "输出信息的分隔符（符号上方的内容为历史内容，留空为不使用分隔符）",
+						"value" : "----------------------------"
+						},{
+							"type" : "select",
+							"label" : "输出时间",
+							"id" : "输出时间",
+							"value" : [
+								{
+									"text" : "不输出",
+									"value" : "0",
+									"selected" : "selected"
+								},{
+									"text" : "-h-m-s",
+									"value" : "1"
+								},{
+									"text" : "-h-m-s-ms",
+									"value" : "2"
+								},{
+									"text" : "调试输出间隔时间",
+									"value" : "3"
+								}
+							]
+						},{
+							"type" : "card",
+							"label" : "功能介绍：",
+							"text" : "<p>1、右键菜单的【复制】功能支持 当前光标行 或 选中内容的复制操作</p><p>2、加解密、编码转换、取哈希值、翻译操作需要选中内容后操作才有效；</p><p>3、支持cmd命令操作；如：在输出框的空行输入 cmd calc 敲回车即可启动计算器；</p><p>4、支持设置输出框字体以及背景；</p><br><p>注：本输出框会将易语言要清空的内容保留，所以建议开启上方的显示清空分割符!</p>"
+						},{
+							"type" : "card",
+							"label" : "关于本插件",
+							"text" : "&nbsp;&nbsp;本插件思路来源于论坛易友【镇坛道德标杆】的开源帖子，引用了该开源的部分功能，主要是接管易语言IDE的输出框，将插件扩展的输出框替换上去，使其支持更多的操作；<br>&nbsp;&nbsp;再次感谢该易友的开源，为易添砖加瓦，同时，我们也期待更多易友做出优秀的扩展，让易更易！<br><br><a href=\"http://bbs.125.la/forum.php?mod=viewthread&tid=14260183\" >查看该开源帖子</a> "
+						}
+					]
+			},{
+			"label" : "提示框扩展",
+			"value" : [
+					{
+							"type" : "checkbox",
+							"skin" : "primary",
+							"id" : "启用提示扩展",
+							"label" : "启用提示扩展",
+							"restart" : "restart",
+							"checked" : "checked"
+					},{
+							"type" : "hr",
+							"color" : "green"
+					},{
+						"type" : "checkbox",
+						"skin" : "primary",
+						"id" : "是否同步T",
+						"label" : "是否同步易语言配色",
+						"restart" : "restart"
+					},{
+						"type" : "checkbox",
+						"skin" : "primary",
+						"id" : "启用命令提示过滤",
+						"label" : "启用命令提示过滤",
+						"checked" : "checked"
+					},{
+						"type" : "text",
+						"label" : "字体大小",
+						"id" : "字体大小",
+						"placeholder" : "提示框中的字体大小，更改后重启易语言生效",
+						"value" : "9"
+					},{
+						"type" : "select",
+						"label" : "表格显示风格",
+						"id" : "显示风格",
+						"value" : [
+									{
+										"text" : "默认风格",
+										"value" : "0",
+										"selected" : "selected"
+									},{
+										"text" : "简约清爽",
+										"value" : "1"
+									},{
+										"text" : "sublime",
+										"value" : "2"
+									},{
+										"text" : "深夜码工",
+										"value" : "3"
+									},{
+										"text" : "老夫的少女心",
+										"value" : "4"
+									}
+								]
+					},{
+						"type" : "select",
+						"label" : "定位列表",
+						"id" : "定位列表",
+						"value" : [
+									{
+										"text" : "在右侧位置",
+										"value" : "0",
+										"selected" : "selected"
+									},{
+										"text" : "在左侧位置",
+										"value" : "1"
+									},{
+										"text" : "不显示定位列表",
+										"value" : "2"
+									}
+								]
+					},{
+						"type" : "text",
+						"label" : "定位框宽度",
+						"id" : "定位列表宽度",
+						"placeholder" : "列表框显示的宽度",
+						"value" : "253"
+					},{
+						"type" : "card",
+						"label" : "开启条件：",
+						"text" : "<p>1、建议状态夹的高度不低于200，宽度不低于600，这样表格显示更佳；</p><p>2、提示框字体更改需重启后生效；</p><p>3、本功能目前属于测试阶段，如果有更多建议，请加群联系我们反馈！</p>"
+					}
+						]
+			},{
+			"label" : "提示框自定义配色",
+			"value" : [
+						{
+							"type" : "checkbox",
+							"skin" : "primary",
+							"id" : "启用自定义表格风格",
+							"label" : "启用自定义表格风格（启用后，提示表格显示风格的选择无效）",
+							"restart" : "restart"
+						},{
+							"type" : "hr",
+							"color" : "green"
+						},{
+							"type" : "color",
+							"label" : "背景颜色",
+							"id" : "背景颜色",
+							"placeholder" : "整体背景颜色",
+							"value" : "#FFFFFF"
+						},{
+							"type" : "color",
+							"label" : "命令名色",
+							"id" : "命令名色",
+							"placeholder" : "命令名色",
+							"value" : "#000080"
+						},{
+							"type" : "color",
+							"label" : "参数名色",
+							"id" : "参数名色",
+							"placeholder" : "参数名色",
+							"value" : "#000000"
+						},{
+							"type" : "color",
+							"label" : "类型颜色",
+							"id" : "类型颜色",
+							"placeholder" : "类型颜色",
+							"value" : "#0000FF"
+						},{
+							"type" : "color",
+							"label" : "备注颜色",
+							"id" : "备注颜色",
+							"placeholder" : "备注颜色",
+							"value" : "#008000"
+						},{
+							"type" : "color",
+							"label" : "提示字色",
+							"id" : "提示字色",
+							"placeholder" : "提示字色",
+							"value" : "#000000"
+						},{
+							"type" : "color",
+							"label" : "文本型色",
+							"id" : "文本型色",
+							"placeholder" : "文本型色",
+							"value" : "#008080"
+						},{
+							"type" : "color",
+							"label" : "整数型色",
+							"id" : "整数型色",
+							"placeholder" : "整数型色",
+							"value" : "#800000"
+						},{
+							"type" : "color",
+							"label" : "库名字色",
+							"id" : "库名字色",
+							"placeholder" : "库名字色",
+							"value" : "maroon"
+						},{
+							"type" : "color",
+							"label" : "表格背景色",
+							"id" : "表格背景色",
+							"placeholder" : "表格背景色",
+							"value" : "#FFFFFF"
+						},{
+							"type" : "color",
+							"label" : "表头背景色",
+							"id" : "表头背景色",
+							"placeholder" : "表头背景色",
+							"value" : "#E6EDE4"
+						},{
+							"type" : "color",
+							"label" : "表格线颜色",
+							"id" : "表格线颜色",
+							"placeholder" : "表格线颜色",
+							"value" : "#999999"
+						}
+					]
+				}
+		]
+}
+

@@ -1,0 +1,67 @@
+{
+	"title" : "屏蔽提示",
+	"option" : [
+		{
+			"type" : "select",
+			"label" : "编译模块",
+			"id" : "屏蔽提示_编译模块",
+			"value" : [
+				{
+					"text" : "不导入到ecom目录",
+					"value" : "0",
+					"selected" : "selected"
+				},{
+					"text" : "导入到ecom目录",
+					"value" : "1"
+				},{
+					"text" : "不启用",
+					"value" : "2"
+				}
+			]
+		},{
+			"type" : "checkbox",
+			"skin" : "primary",
+			"id" : "屏蔽提示_更新模块不提示",
+			"label" : "发现引用模块有新版本直接更新",
+			"a" : {
+				"label" : "查看效果",
+				"href" : "http://e.125.la/e.php?demo=d2"
+			}
+		},{
+			"type" : "checkbox",
+			"skin" : "primary",
+			"id" : "屏蔽提示_屏蔽打开提示",
+			"label" : "双击易语言源码直接在新窗口打开"
+		},{
+			"type" : "checkbox",
+			"skin" : "primary",
+			"id" : "屏蔽提示_不可识别信息",
+			"label" : "发现不可识别的[XXX信息段]，其数据已被跳过!",
+			"a" : {
+					"label" : "查看效果",
+					"href" : "http://e.125.la/e.php?demo=d10"
+				}
+		},{
+			"type" : "checkbox",
+			"skin" : "primary",
+			"id" : "屏蔽提示_不同版本",
+			"label" : "发现另一不同软件版本的易语言系统正在运行，两者混用容易产生问题，建议将其关闭！",
+			"a" : {
+					"label" : "查看效果",
+					"href" : "http://e.125.la/e.php?demo=d9"
+				}
+		},{
+			"type" : "checkbox",
+			"skin" : "primary",
+			"id" : "屏蔽提示_建议升级",
+			"label" : "此文件由易语言x版生成的x版易程序，建议升级至该版本以便正确和完整地读入文件数据!",
+			"a" : {
+				"label" : "查看效果",
+				"href" : "http://e.125.la/e.php?demo=d10"
+				}
+		},{
+			"type" : "quote",
+			"text" : "本插件主要是将易语言一些提示信息框进行屏蔽处理，默认执行某个操作。不熟悉的易友请选择性开启相关功能，防止出现一些未知问题！"
+			}
+	]
+}

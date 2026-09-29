@@ -1,0 +1,26 @@
+{
+	"title" : "快捷输入",
+	"option" : [
+		{
+			"type" : "dtable1",
+			"id" : "QI_List",
+			"value" : [
+				{
+					"lable" : "快捷键",
+					"width" : "190",
+					"only" : "only",
+					"key" : "key",
+					"placeholder" : "如：ctrl + f1"
+				},{
+					"lable" : "输出内容",
+					"width" : "403",
+					"placeholder" : "按键后输出的内容，如：全_运行目录 = 取运行目录() + \\"
+				}
+			]
+		},{
+			"type" : "card",
+			"label" : "<strong>支持的键代码列表</strong>",
+			"text" : "<span class=\"layui-badge\">Ctrl</span><span class=\"layui-badge layui-bg-orange\">Alt</span><span class=\"layui-badge layui-bg-green\">Shift</span><span class=\"layui-badge layui-bg-cyan\">a ~ z</span><span class=\"layui-badge layui-bg-blue\">0 ~ 9</span><span class=\"layui-badge layui-bg-black\">F1 ~ F12</span><span class=\"layui-badge layui-bg-gray\">num0 ~ num9</span><span class=\"layui-badge\">`</span><span class=\"layui-badge layui-bg-orange\">=</span><span class=\"layui-badge layui-bg-green\">[</span><span class=\"layui-badge layui-bg-cyan\">]</span><span class=\"layui-badge layui-bg-blue\">\\</span><span class=\"layui-badge layui-bg-black\">;</span><span class=\"layui-badge layui-bg-cyan\">'</span><span class=\"layui-badge\">,</span><span class=\"layui-badge layui-bg-orange\">*</span><span class=\"layui-badge layui-bg-green\">/</span><span class=\"layui-badge layui-bg-cyan\">-</span><span class=\"layui-badge layui-bg-blue\">.</span>"
+		}
+	]
+}

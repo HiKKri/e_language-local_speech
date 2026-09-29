@@ -1,0 +1,73 @@
+{
+   "option" : [
+      {
+         "a" : {
+            "href" : "http://e.125.la/e.php?demo=d5",
+            "label" : "查看",
+            "placeholder" : "点击查看效果"
+         },
+         "id" : "30秒编译限制",
+         "label" : "去除30秒编译限制（部分用户可能会有冲突）",
+         "skin" : "primary",
+         "type" : "checkbox"
+      },
+      {
+         "id" : "输出调试文本长度限制",
+         "label" : "修复 [输出调试文本] 长度限制（如输出内容过长，可能会引起卡顿）",
+         "skin" : "primary",
+         "type" : "checkbox"
+      },
+      {
+         "checked" : "checked",
+         "id" : "启动假死",
+         "label" : "修复后台残留进程卡死新启动易语言问题，建议保持开启。",
+         "skin" : "primary",
+         "type" : "checkbox"
+      },
+      {
+         "checked" : "checked",
+         "id" : "常量编辑控件输入文本的长度限制",
+         "label" : "解除常量编辑控件输入文本不能大于30000的长度限制",
+         "skin" : "primary",
+         "type" : "checkbox"
+      },
+      {
+         "hide" : "hide",
+         "id" : "变量粘贴格式错误",
+         "label" : "[测试功能]修复无法正确粘贴【全局变量】的问题。",
+         "restart" : "restart",
+         "skin" : "primary",
+         "type" : "checkbox"
+      },
+      {
+         "checked" : "checked",
+         "id" : "removeTheHotkey",
+         "label" : "解除 Ctrl + / 热键占用",
+         "placeholder" : "恢复热键请取消勾选并重新打开易语言即可！",
+         "skin" : "primary",
+         "type" : "checkbox"
+      },
+      {
+         "checked" : "checked",
+         "id" : "isInsertButton",
+         "label" : "在查看表达式窗口增加 打开按钮，用于在关联的记事本中查看显示的信息。",
+         "skin" : "primary",
+         "type" : "checkbox"
+      },
+      {
+         "checked" : "checked",
+         "id" : "isProcMemButton",
+         "label" : "在状态夹变量表中增加 打开按钮，用于在关联的记事本中查看显示的信息。",
+         "skin" : "primary",
+         "type" : "checkbox"
+      },
+      {
+         "checked" : "checked",
+         "id" : "长备注滚动条修复",
+         "label" : "修复常量备注过长滚动条乱滚的问题。",
+         "skin" : "primary",
+         "type" : "checkbox"
+      }
+   ],
+   "title" : "修复插件"
+}

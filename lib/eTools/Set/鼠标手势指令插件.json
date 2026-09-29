@@ -1,0 +1,228 @@
+{
+    "title": "更新模块引用",
+    "option": [
+        {
+            "type": "color",
+            "label": "线条颜色",
+            "id": "线条颜色",
+            "placeholder": "线条颜色",
+            "value": "#0077FF"
+        },
+        {
+            "type": "select",
+            "label": "上下",
+            "id": "上下",
+            "value": [
+                {
+                    "text": "无效动作",
+                    "value": "0"
+                },
+                {
+                    "text": "滚动到页面顶部",
+                    "value": "1",
+                    "selected": "selected"
+                },
+                {
+                    "text": "滚动到页面底部",
+                    "value": "2"
+                },
+                {
+                    "text": "向上翻页",
+                    "value": "3"
+                },
+                {
+                    "text": "向下翻页",
+                    "value": "4"
+                },
+                {
+                    "text": "光标移动到行首",
+                    "value": "5"
+                },
+                {
+                    "text": "光标移动到行尾",
+                    "value": "6"
+                }
+            ]
+        },
+        {
+            "type": "select",
+            "label": "下上",
+            "id": "下上",
+            "value": [
+                {
+                    "text": "无效动作",
+                    "value": "0"
+                },
+                {
+                    "text": "滚动到页面顶部",
+                    "value": "1"
+                },
+                {
+                    "text": "滚动到页面底部",
+                    "value": "2",
+                    "selected": "selected"
+                },
+                {
+                    "text": "向上翻页",
+                    "value": "3"
+                },
+                {
+                    "text": "向下翻页",
+                    "value": "4"
+                },
+                {
+                    "text": "光标移动到行首",
+                    "value": "5"
+                },
+                {
+                    "text": "光标移动到行尾",
+                    "value": "6"
+                }
+            ]
+        },
+        {
+            "type": "select",
+            "label": "上",
+            "id": "上",
+            "value": [
+                {
+                    "text": "无效动作",
+                    "value": "0"
+                },
+                {
+                    "text": "滚动到页面顶部",
+                    "value": "1"
+                },
+                {
+                    "text": "滚动到页面底部",
+                    "value": "2"
+                },
+                {
+                    "text": "向上翻页",
+                    "value": "3",
+                    "selected": "selected"
+                },
+                {
+                    "text": "向下翻页",
+                    "value": "4"
+                },
+                {
+                    "text": "光标移动到行首",
+                    "value": "5"
+                },
+                {
+                    "text": "光标移动到行尾",
+                    "value": "6"
+                }
+            ]
+        },
+        {
+            "type": "select",
+            "label": "下",
+            "id": "下",
+            "value": [
+                {
+                    "text": "无效动作",
+                    "value": "0"
+                },
+                {
+                    "text": "滚动到页面顶部",
+                    "value": "1"
+                },
+                {
+                    "text": "滚动到页面底部",
+                    "value": "2"
+                },
+                {
+                    "text": "向上翻页",
+                    "value": "3"
+                },
+                {
+                    "text": "向下翻页",
+                    "value": "4",
+                    "selected": "selected"
+                },
+                {
+                    "text": "光标移动到行首",
+                    "value": "5"
+                },
+                {
+                    "text": "光标移动到行尾",
+                    "value": "6"
+                }
+            ]
+        },
+        {
+            "type": "select",
+            "label": "左",
+            "id": "左",
+            "value": [
+                {
+                    "text": "无效动作",
+                    "value": "0"
+                },
+                {
+                    "text": "滚动到页面顶部",
+                    "value": "1"
+                },
+                {
+                    "text": "滚动到页面底部",
+                    "value": "2"
+                },
+                {
+                    "text": "向上翻页",
+                    "value": "3"
+                },
+                {
+                    "text": "向下翻页",
+                    "value": "4"
+                },
+                {
+                    "text": "光标移动到行首",
+                    "value": "5",
+                    "selected": "selected"
+                },
+                {
+                    "text": "光标移动到行尾",
+                    "value": "6"
+                }
+            ]
+        },
+        {
+            "type": "select",
+            "label": "右",
+            "id": "右",
+            "value": [
+                {
+                    "text": "无效动作",
+                    "value": "0"
+                },
+                {
+                    "text": "滚动到页面顶部",
+                    "value": "1"
+                },
+                {
+                    "text": "滚动到页面底部",
+                    "value": "2"
+                },
+                {
+                    "text": "向上翻页",
+                    "value": "3"
+                },
+                {
+                    "text": "向下翻页",
+                    "value": "4"
+                },
+                {
+                    "text": "光标移动到行首",
+                    "value": "5"
+                },
+                {
+                    "text": "光标移动到行尾",
+                    "value": "6",
+                    "selected": "selected"
+                }
+            ]
+        }
+    ]
+}

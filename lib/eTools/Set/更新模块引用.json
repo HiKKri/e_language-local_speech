@@ -1,0 +1,59 @@
+{
+    "title": "更新模块引用",
+    "tab": [{
+            "label": "语法规则",
+            "value": [{
+                    "type": "checkbox",
+                    "skin": "primary",
+                    "id": "启用语法规则",
+                    "label": "启用语法规则",
+                    "checked": ""
+                },
+                {
+                    "type": "text",
+                    "label": "语法规则",
+                    "id": "语法规则",
+                    "placeholder": "当程序中引入的易模块实际存在位置已经无法找到时按语法规则匹配更新",
+                    "value": "^[^\r_vV\[]+"
+                },
+                {
+                    "type": "card",
+                    "label": "什么是语法规则",
+                    "text": "<p>语法规则其实就是通过正则表达式语句过滤部分字符串，再通过查找配置项确认是否有该模块可被引用！</p>"
+                },
+                {
+                    "type": "checkbox",
+                    "skin": "primary",
+                    "id": "静默",
+                    "label": "静默（尝试从助手中的常用模块列表中查找易模块但不显示对话框）",
+                    "checked": ""
+                }
+            ]
+        },
+        {
+            "label": "输出提示",
+            "value": [{
+                    "type": "checkbox",
+                    "skin": "primary",
+                    "id": "删除模块引用时输出提示",
+                    "label": "删除模块引用时输出提示",
+                    "checked": "checked"
+                },
+                {
+                    "type": "checkbox",
+                    "skin": "primary",
+                    "id": "添加模块引用时输出提示",
+                    "label": "添加模块引用时输出提示",
+                    "checked": "checked"
+                },
+                {
+                    "type": "checkbox",
+                    "skin": "primary",
+                    "id": "未能找到模块时输出提示",
+                    "label": "未能找到模块时输出提示",
+                    "checked": "checked"
+                }
+            ]
+        }
+    ]
+}

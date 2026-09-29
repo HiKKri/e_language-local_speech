@@ -1,0 +1,43 @@
+{
+	"title" : "命令提示框多屏修正设置",
+	"option" : [
+				{
+						"type" : "select",
+						"label" : "显示模式",
+						"id" : "显示模式",
+						"value" : [
+					{
+						"text" : "自适应显示",
+						"value" : "0",
+						"selected" : "selected"
+					},{
+						"text" : "自定义显示",
+						"value" : "1"
+					}
+						]
+					},{
+						"type" : "text",
+						"label" : "自定义宽高",
+						"id" : "自定义宽高",
+						"value" : "",
+						"placeholder" : "默认：223 158，请根据各自情况调整"
+					},{
+						"type" : "card",
+						"label" : "自定义宽高说明",
+						"text" : "<p>1、设置命令提示框的显示宽度和高度</p><p>2、如果选择自适应显示，自动适应宽度保证显示最长字符的命令；</p>"
+					},{
+							"type" : "color",
+							"label" : "命令框背景颜色",
+							"id" : "命令框背景颜色",
+							"placeholder" : "命令框背景颜色",
+							"value" : "#FFFFFF"
+						},{
+							"type" : "color",
+							"label" : "命令框文本颜色",
+							"id" : "命令框文本颜色",
+							"placeholder" : "命令框文本颜色",
+							"value" : "#000000"
+						}
+			]
+						
+}

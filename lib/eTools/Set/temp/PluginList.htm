@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="GB2312"/>
+        <title>插件列表</title>
+        <link rel="stylesheet" href="../layui/css/layui.css"/>
+        <style type="text/css" media="screen">
+            .layui-tab-title {
+                position: relative;
+            }
+
+            .search {
+                position: absolute;
+                top: 5px;
+                right: 8px;
+                width: 250px;
+            }
+
+            .search .layui-input {
+                height: 34px;
+                padding-left: 28px;
+            }
+
+            .search ._icon {
+                position: absolute;
+                top: 9px;
+                left: 8px;
+                color: #999;
+            }
+
+            .search ._return {
+                position: absolute;
+                top: 9px;
+                right: 8px;
+                color: #999;
+                cursor: pointer;
+            }
+
+            .layui-table th.center {
+                text-align: center;
+            }
+
+            td.center {
+                text-align: center;
+            }
+
+            td.center a span {
+                font-size: 1.5em;
+            }
+
+            td.right {
+                text-align: right;
+            }
+
+            td.right a span {
+                font-size: 1.3em;
+            }
+
+            td span.describe {
+                color: #AAA;
+                padding-top: 5px;
+                padding-left: 17px;
+                display: inline-block;
+            }
+
+            td a.del {
+                display: none;
+            }
+
+            /*因为使用了 label + margin-right: 10px 所以这里就不要边距了*/
+
+            td span.layui-badge,
+            .layui-badge-rim {
+                margin-left: 0px;
+            }
+
+            tr {
+                background: #F2F2F2;
+            }
+
+            tr:hover {
+                background: white !important;
+            }
+
+            tr.ed {
+                background: white;
+            }
+
+            tr td label {
+                cursor: pointer !important;
+                margin-right: 10px;
+            }
+
+            .layui-tab {
+                margin: 5px 0 0 0;
+            }
+
+            .info span {
+                color: #888;
+            }
+
+            #info table td {
+                background: white !important;
+            }
+
+            #info table td span.layui-badge,
+            .layui-badge-rim {
+                margin-left: 0 !important;
+            }
+
+            tr {
+                position: relative;
+            }
+
+            tr span.video {
+                /* padding-top: 20px; */
+                padding-left: 8px;
+                cursor: pointer;
+            }
+
+            tr span.video span.layui-icon {
+                color: #FF5722;
+            }
+
+            .tooltip {
+                position: relative;
+                display: inline-block;
+            }
+
+            .tooltip .tooltiptext {
+                visibility: hidden;
+                width: 150px;
+                background-color: black;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 5px 0;
+                position: absolute;
+                z-index: 1;
+                left: -45px;
+                top: -10px;
+                /* 淡入 - 1秒内从 0% 到 100% 显示: */
+                opacity: 0;
+                transition: opacity 1s;
+            }
+
+            .tooltip .tooltiptext::after {
+                content: "";
+                position: absolute;
+                /*
+                margin-top: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: transparent black transparent transparent; */
+            }
+
+            .tooltip:hover .tooltiptext {
+                visibility: visible;
+                opacity: 1;
+            }
+        </style>
+    </head>
+
+    <body style="overflow-y : scroll;">
+        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+            <div class="nov">
+                <ul class="layui-tab-title">
+                    <li id="tab_all" lay-id="all" class="layui-this">全部 <span class="layui-badge-rim">.</span></li>
+                    <li id="tab_enable" lay-id="enable">已启用 <span class="layui-badge-rim">.</span></li>
+                    <li id="tab_ban" lay-id="ban">未启用 <span class="layui-badge-rim">.</span></li>
+                </ul>
+                <div class="search">
+                    <span class="layui-icon _icon">&#xe615;</span>
+                    <span class="layui-icon _return" id="return">&#x1007;</span>
+                    <input type="text" class="layui-input color" value="" placeholder="请输入插件名称，回车搜索" id="search"/>
+                </div>
+            </div>
+
+            <div class="layui-tab-content plugin-list" style="height: 100px;">
+                <div class="layui-tab-item layui-show">
+                    <table class="layui-table" lay-skin="line">
+                        <thead>
+                            <tr>
+                                <th>
+                                    名称/作者
+                                    <a href="javascript:;" style="margin-left: 10px;"
+                                       onclick="pluginList=[];parent.LoadPlugin();">
+                                        <span style="color: #1E9FFF">刷新列表</span>
+                                    </a>
+                                    <a href="javascript:;" style="margin-left: 10px;" onclick="openFile()">
+                                        <span style="color: #FF5722">导入插件</span>
+                                    </a>
+                                    <a href="javascript:;" style="margin-left: 10px;" onclick="SelectAllList()">
+                                        <span style="color: #EC1282">全选</span>
+                                    </a>
+                                    <a href="javascript:;" style="margin-left: 10px;" onclick="ReverseAllList()">
+                                        <span style="color: #EC1282">反选</span>
+                                    </a>
+                                </th>
+                                <th width="80" class="center">
+                                    &nbsp;&nbsp;
+                                    <a href="javascript:;" onclick="adminDel(this);">
+                                        管理
+                                    </a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="pluginlist">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="info" style="display: none; width: 100%">
+                <table class="layui-table" style="width: 96%;margin-left: 2%;">
+                    <tbody>
+                        <tr>
+                            <th width="60">插件名称</th>
+                            <td name="name"></td>
+                        </tr>
+
+                        <tr>
+                            <th>插件版本</th>
+                            <td name="version"></td>
+                        </tr>
+
+                        <tr>
+                            <th>插件描述</th>
+                            <td name="describe"></td>
+                        </tr>
+
+                        <tr>
+                            <th>插件作者</th>
+                            <td name="author"></td>
+                        </tr>
+
+                        <tr>
+                            <th>插件标识</th>
+                            <td name="flag"></td>
+                        </tr>
+
+                        <tr>
+                            <th>插件路径</th>
+                            <td name="dllFile"></td>
+                        </tr>
+
+                        <tr>
+                            <th>插件配置</th>
+                            <td name="config"></td>
+                        </tr>
+                        <tr>
+                            <th>支持版本</th>
+                            <td name="verRequest"></td>
+                        </tr>
+                        <tr>
+                            <th>依赖插件</th>
+                            <td name="pluginRequest"></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script type="text/javascript" src="../layui/layui.js"></script>
+        <script type="text/javascript" src="../js/jquery.js"></script>
+        <script type="text/javascript">
+            var form, pluginList = [],
+                    _index = 0,
+                    Admin = false,
+                    word = '',
+                    type = 'all';
+            layui.config({
+                "isOutAnim": false,
+                "anim": -1
+            });
+            layui.use(["form", "element"], function () {
+                layer.config({
+                    "isOutAnim": false,
+                    "anim": -1
+                });
+                var element = layui.element;
+                element.on('tab', function (data) {
+                    type = $(this).attr('lay-id');
+                    $("#return").click();
+                    refreshByType();
+                });
+
+                $("#search").keyup(function (e) {
+                    if (e.keyCode == 13) {
+                        word = this.value;
+                        pluginList = [];
+                        parent.LoadPlugin();
+                    }
+                });
+                $("#return").click(function () {
+                    $('#search').val('');
+                    word = '';
+                    pluginList = [];
+                    parent.LoadPlugin();
+                });
+
+                form = layui.form;
+                parent.LoadPlugin();
+            });
+
+            function adminDel(obj) {
+                var name = $(obj).text().trim();
+                if (name == '管理') {
+                    Admin = true;
+                    $(obj).text('取消');
+                    $("a.del").show();
+
+                } else {
+                    Admin = false;
+                    $(obj).text('管理');
+                    $("a.del").hide();
+                }
+            }
+
+            function refreshByType() {
+                if (type == 'all') {
+                    $("tr[data-checked]").show();
+                } else if (type == 'enable') {
+                    $("tr[data-checked='checked']").show();
+                    $("tr[data-checked='undefined']").hide();
+
+                } else if (type == 'ban') {
+                    $("tr[data-checked='checked']").hide();
+                    $("tr[data-checked='undefined']").show();
+                }
+            }
+
+            var enablednum = 0;
+            var unenablednum = 0;
+
+            //重新计算已启用和未启用的插件数量
+            function calcNum() {
+                $("#tab_all")[0].innerHTML = '全部  <span class="layui-badge-rim">' + (enablednum + unenablednum) + '</span>';
+                $("#tab_enable")[0].innerHTML = '已启用  <span class="layui-badge-rim">' + (enablednum) + '</span>';
+                $("#tab_ban")[0].innerHTML = '未启用  <span class="layui-badge-rim">' + (unenablednum) + '</span>';
+            }
+
+            function addPlugin() {
+                var str = new Array();
+                enablednum = 0;
+                unenablednum = 0;
+                $('#pluginlist').empty();
+                layer.msg("插件加载中...", {
+                    icon: 16
+                });
+                //console.log(JSON.stringify(pluginList));
+
+                for (var i in pluginList) {
+                    if (word.length > 0) {
+                        if (pluginList[i].title.indexOf(word) == -1 &&
+                                pluginList[i].title1.indexOf(word) == -1 &&
+                                pluginList[i].title2.indexOf(word) == -1) {
+                            continue;
+                        }
+                    }
+                    str.push('<tr name="' + pluginList[i].name + '" title="' + pluginList[i].title + '" htmFile="' + pluginList[i]
+                            .htmFile + '" data-video="' + pluginList[i].video + '" data-checked="' + pluginList[i].checked + '">');
+
+                    if (pluginList[i].checked == 'checked')
+                        enablednum++;
+                    else
+                        unenablednum++;
+
+                    //原title=配置文件: '+pluginList[i].htmFile+'
+                    str.push('<td title=""><label><input type="checkbox" name="' + pluginList[i].name + '" ' + pluginList[i]
+                            .checked + ' ' + pluginList[i].disabled + '> ' + pluginList[i].title + ' ' + pluginList[i].version);
+
+                    if (pluginList[i].video != null && pluginList[i].video != '') {
+                        //str.push('<div class="tooltip">');
+                        str.push('<span class="video tooltip"><span class="layui-icon">&#xe6ed;</span>');
+                        str.push('<span class="tooltiptext">点击观看插件演示视频</span>');
+                        str.push('</span>');
+                        //str.push('</div>');
+                    }
+
+                    str.push('</label>');
+                    if (pluginList[i].official == 1) {
+                        str.push('<span class="layui-badge layui-bg-blue">' + pluginList[i].flag + '</span>');
+                    } else if (pluginList[i].official == 2) {
+                        str.push('<span class="layui-badge layui-bg-green">' + pluginList[i].flag + '</span>');
+                    } else if (pluginList[i].official == 3) {
+                        str.push('<span class="layui-badge layui-bg-orange">' + pluginList[i].author + ' - ' + pluginList[i]
+                                .flag + '</span>');
+                    } else {
+                        str.push('<span class="layui-badge">' + pluginList[i].author + ' - ' + pluginList[i].flag + '</span>');
+                    }
+
+                    str.push('<br/>');
+                    str.push('<span class="describe">' + pluginList[i].describe + '</span>');
+                    str.push('</td>');
+                    if (pluginList[i].htmFile == '无') {
+                        str.push('<td class="right"><a href="javascript:;" class="info" data-i="' + i +
+                                '"><span class="layui-icon">&#xe60b;</span></a> <a href="javascript:;" class="del"><span class="layui-icon">&#xe640;</span></a></td>'
+                        );
+                    } else {
+                        str.push(
+                                '<td class="right"><a href="javascript:;" class="set"><span class="layui-icon">&#xe620;</span></a> <a href="javascript:;" class="info" data-i="' +
+                                i +
+                                '"><span class="layui-icon">&#xe60b;</span></a> <a href="javascript:;" class="del"><span class="layui-icon">&#xe640;</span></a></td>'
+                        );
+                    }
+
+                    str.push('</tr>');
+                    if (pluginList[i].top == '1') {
+                        $("#pluginlist").prepend(str.join(""));
+
+                    } else {
+                        $("#pluginlist").append(str.join(""));
+                    }
+                    str.length = 0;
+
+                }
+                calcNum();
+
+                $("#pluginlist input[type=checkbox]").click(function (e) {
+                    if (this.checked) {
+                        $(this).parent().parent().parent().addClass('ed');
+                        enablednum++;
+                        unenablednum--;
+                    } else {
+                        $(this).parent().parent().parent().removeClass('ed');
+                        enablednum--;
+                        unenablednum++;
+                    }
+                    calcNum();
+                    parent.SendMsg("EnablePlugin", $(this).attr("name"), this.checked);
+                });
+                $("a.set").click(function (e) {
+                    var tr = $(this).parent().parent();
+                    parent.swtichSet(tr.attr("htmFile"), tr.attr("title"));
+                });
+
+                $("span.video").click(function (e) {
+                    var tr = $(this).parent().parent().parent();
+                    //parent.playVideo('https://space.bilibili.com/2141186/video');
+                    parent.playVideo(tr.attr("data-video"));
+                    e.stopPropagation();
+                    return false;
+                });
+
+                $("a.info").click(function (e) {
+                    let index = $(this).attr("data-i");
+                    $("#info td[name='name']").text(pluginList[index].title);
+                    $("#info td[name='version']").text(pluginList[index].version);
+                    $("#info td[name='describe']").text(pluginList[index].describe);
+
+                    let author = '';
+                    author = '<span class="layui-badge-rim">' + pluginList[index].author + '</span>';
+                    //if (pluginList[index].official==1) {
+                    //			author = '<span class="layui-badge layui-bg-blue">'+pluginList[index].author+'</span>';
+                    //} else {
+                    //			author = '<span class="layui-badge-rim">'+pluginList[index].author+'</span>';
+                    //}
+                    $("#info td[name='author']").html(author);
+
+
+                    let flagstr = '';
+                    if (pluginList[index].official == 1) {
+                        flagstr = '<span class="layui-badge layui-bg-blue">' + pluginList[index].flag + '</span>';
+                    } else if (pluginList[index].official == 2) {
+                        flagstr = '<span class="layui-badge layui-bg-green">' + pluginList[index].flag + '</span>';
+                    } else if (pluginList[index].official == 3) {
+                        flagstr = '<span class="layui-badge layui-bg-orange">' + pluginList[index].flag + '</span>';
+                    } else {
+                        flagstr = '<span class="layui-badge">' + pluginList[index].flag + '</span>';
+                    }
+                    $("#info td[name='flag']").html(flagstr);
+
+                    if (pluginList[index].pluginFile != '无') {
+                        $("#info td[name='dllFile']").html('<a href="javascript:;">' + pluginList[index].pluginFile +
+                                '.dll</a>');
+                    } else {
+                        $("#info td[name='dllFile']").html('插件信息读取出错');
+                    }
+
+
+                    if (pluginList[index].SetFile != '无') {
+
+                        $("#info td[name='config']").html('<a href="javascript:;">' + pluginList[index].SetFile +
+                                '.json</a>');
+                    } else {
+                        $("#info td[name='config']").html('无');
+                    }
+
+                    $("#info td[name='verRequest']").html(pluginList[index].verRequest);
+                    $("#info td[name='pluginRequest']").html(pluginList[index].pluginRequest);
+
+                    layer.open({
+                        title: "插件信息",
+                        type: 1,
+                        area: ['75%', '90%'],
+                        fixed: false,
+                        maxmin: false,
+                        shadeClose: true,
+                        content: $('#info')
+                    });
+                });
+
+                $("#info td[name='htmFile'], #info td[name='dllFile'], #info td[name='config']").click(function (e) {
+                    parent.SendMsg("openDictionary", $(this).text()); //  将当前的插件名
+                });
+
+                $("a.del").click(function (e) {
+                    var tr = $(this).parent().parent();
+                    var name = tr.attr("name");
+                    var title = tr.attr("title");
+                    parent.SendMsg1("delPlugin", name, title);
+                });
+                $("tr input[type='checkbox']:checked").each(function (index, el) {
+                    $(el).parent().parent().parent().addClass('ed');
+                });
+
+                refreshByType();
+                if (Admin == true) {
+                    $("a.del").show();
+                }
+                if (word.length > 0) {
+                    layer.msg("搜索完毕", {
+                        time: 500
+                    });
+                } else {
+                    layer.msg("插件加载完毕", {
+                        time: 500
+                    });
+                }
+            }
+
+            function openSet(title, src) {
+                parent.layer.open({
+                    title: title,
+                    type: 2,
+                    area: ['750px', '500px'],
+                    fixed: false,
+                    maxmin: false,
+                    shadeClose: true,
+                    content: ['temp/' + src + '.htm', 'no'],
+                    end: function () {
+                        parent.SendMsg1("Switch", "PluginList");
+                    }
+                });
+            }
+
+            function openFile() {
+                parent.SendMsg1('Button', 'openFile', 'openFileCall', '易语言助手插件(*.etools)|*.etools')
+            }
+
+            function openFileCall(fileName) {
+                parent.SendMsg1('pluginImport', fileName);
+            }
+
+            function SelectAllList() {
+                layer.alert('即将全选所有插件！为防止造成易语言意外崩溃，请先保存源码并退出易语言！', {
+                    title: '温馨提示',
+                    btn: ['确定', '取消'],
+                    btn1: function (index) {
+                        $("#pluginlist input[type=checkbox]").each(function (i, ele) {
+                            if (ele.checked == false) {
+                                ele.click();
+                            }
+                        });
+                        layer.close(index);
+                    }
+                })
+            }
+
+            function ReverseAllList() {
+                $("#pluginlist input[type=checkbox]").each(function (i, ele) {
+                    if (ele.checked == true) {
+                        ele.click();
+                    }
+                })
+            }
+        </script>
+
+    </body>
+
+</html>

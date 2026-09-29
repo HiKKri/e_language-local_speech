@@ -1,0 +1,238 @@
+{
+   "tab" : [
+      {
+         "label" : "编译快捷键设置",
+         "value" : [
+            {
+               "id" : "智能编译快捷键_值",
+               "key" : "key",
+               "label" : "静态编译快捷键",
+               "placeholder" : "请确保快捷键不被其他插件占用",
+               "type" : "text",
+               "value" : "F7"
+            },
+            {
+               "id" : "独立编译快捷键_值",
+               "key" : "key",
+               "label" : "独立编译快捷键",
+               "placeholder" : "请确保快捷键不被其他插件占用，留空为不启用",
+               "type" : "text",
+               "value" : ""
+            },
+            {
+               "color" : "#FF6633",
+               "label" : "黑月快捷键编译设置",
+               "type" : "separate"
+            },
+            {
+               "id" : "黑月版本",
+               "label" : "黑月版本",
+               "type" : "select",
+               "value" : [
+                  {
+                     "selected" : "selected",
+                     "text" : "请选择当前所用的黑月版本",
+                     "value" : "0"
+                  },
+                  {
+                     "text" : "3.X",
+                     "value" : "1"
+                  },
+                  {
+                     "text" : "4.X（如果通过黑月工具修改了菜单名，请在对应的模式下修改名称）",
+                     "value" : "2"
+                  }
+               ]
+            },
+            {
+               "id" : "黑月汇编快捷键_值",
+               "key" : "key",
+               "label" : "黑月汇编模式",
+               "placeholder" : "请确保快捷键不被其他插件占用，留空为不启用",
+               "type" : "text",
+               "value" : ""
+            },
+            {
+               "id" : "黑月汇编模式_4",
+               "label" : "汇编模式菜单名",
+               "placeholder" : "4.X版的 黑月汇编模式 使用的 【菜单】名称，请通过黑月工具添加，3.X版无视",
+               "type" : "text",
+               "value" : "汇编模式"
+            },
+            {
+               "id" : "黑月C++快捷键_值",
+               "key" : "key",
+               "label" : "黑月C++模式",
+               "placeholder" : "请确保快捷键不被其他插件占用，留空为不启用",
+               "type" : "text",
+               "value" : ""
+            },
+            {
+               "id" : "黑月C++模式_4",
+               "label" : "C++模式菜单名",
+               "placeholder" : "4.X版的 黑月C++模式 使用的 【菜单】名称，请通过黑月工具添加，3.X版无视",
+               "type" : "text",
+               "value" : "纯C/C++模式"
+            },
+            {
+               "id" : "黑月MFC快捷键_值",
+               "key" : "key",
+               "label" : "黑月MFC模式",
+               "placeholder" : "请确保快捷键不被其他插件占用，留空为不启用",
+               "type" : "text",
+               "value" : ""
+            },
+            {
+               "id" : "黑月MFC模式_4",
+               "label" : "MFC模式菜单名",
+               "placeholder" : "4.X版的 黑月MFC模式 使用的 【菜单】名称，请通过黑月工具添加，3.X版无视",
+               "type" : "text",
+               "value" : "VC++模式"
+            },
+            {
+               "skin" : "gray",
+               "text" : "如果你未安装黑月插件，则黑月相关的编译模式快捷键将无效！<br>编译后设置操作如果是未启用【提示输出框】插件，快捷键执行黑月的操作将不会输出信息",
+               "type" : "quote"
+            }
+         ]
+      },
+      {
+         "label" : "基本设置",
+         "value" : [
+            {
+               "id" : "编译目录设置",
+               "label" : "编译目录模式",
+               "type" : "select",
+               "value" : [
+                  {
+                     "selected" : "selected",
+                     "text" : "编译到上次的目录",
+                     "value" : "0"
+                  },
+                  {
+                     "text" : "编译到源码根目录",
+                     "value" : "1"
+                  },
+                  {
+                     "text" : "编译到指定的目录",
+                     "value" : "2"
+                  }
+               ]
+            },
+            {
+               "id" : "指定编译目录",
+               "label" : "编译到指定目录",
+               "placeholder" : "只有当编译模式为：[编译到指定目录]时有效",
+               "type" : "file",
+               "value" : ""
+            },
+            {
+               "id" : "用源码文件名",
+               "label" : "用源码文件名作为编译的文件名（不勾将用上次编译的文件名）时有效",
+               "skin" : "primary",
+               "type" : "checkbox"
+            },
+            {
+               "id" : "顺序编译",
+               "label" : "每次编译不同文件名（将会在文件名后加上数字编号）",
+               "skin" : "primary",
+               "type" : "checkbox"
+            }
+         ]
+      },
+      {
+         "label" : "编译后设置",
+         "value" : [
+            {
+               "color" : "#FF6633",
+               "id" : "手动编译执行动作",
+               "label" : " 手动执行(编译、独立/静态/黑月编译)后执行下方配置（勾选后，将执行下方勾选的操作）",
+               "restart" : "restart",
+               "skin" : "primary",
+               "type" : "checkbox"
+            },
+            {
+               "id" : "编译输出MD5",
+               "label" : "编译完后输出文件MD5",
+               "skin" : "primary",
+               "type" : "checkbox"
+            },
+            {
+               "id" : "编译并运行",
+               "label" : "编译完后运行程序",
+               "skin" : "primary",
+               "type" : "checkbox"
+            },
+            {
+               "id" : "编译并打开目录",
+               "label" : "编译完后打开文件目录",
+               "skin" : "primary",
+               "type" : "checkbox"
+            },
+            {
+               "id" : "编译并打开源码目录",
+               "label" : "编译完后打开源码目录",
+               "skin" : "primary",
+               "type" : "checkbox"
+            },
+            {
+               "id" : "编译后自动保存",
+               "label" : "编译完后自动执行保存操作",
+               "skin" : "primary",
+               "type" : "checkbox"
+            },
+            {
+               "checked" : "checked",
+               "id" : "优化程序",
+               "label" : "优化编译出来的程序，减少误报，优化程序体积(只对静态编译有效)，<br>注意，开启此功能时，需要关闭易语言自带的结果打乱。<br>步骤：工具->系统配置->编译结果打乱设置为0",
+               "skin" : "primary",
+               "type" : "checkbox"
+            },
+            {
+               "a" : {
+                  "href" : "http://e.125.la/e.php?demo=d14",
+                  "label" : "相关说明",
+                  "placeholder" : "点击查看效果"
+               },
+               "checked" : "checked",
+               "id" : "提高内存占用上限",
+               "label" : "突破1.7G内存限制，将可用内存提升到3.7G以上",
+               "skin" : "primary",
+               "type" : "checkbox"
+            },
+            {
+               "id" : "编译加UAC小盾牌",
+               "label" : "对编译出来的程序自动增加UAC小盾牌（无需开启系统设置中的UAC权限）",
+               "skin" : "primary",
+               "type" : "checkbox"
+            },
+            {
+               "a" : {
+                  "href" : "https://bbs.125.la/thread-14579295-1-1.html",
+                  "label" : "相关说明",
+                  "placeholder" : "点击查看效果"
+               },
+               "id" : "执行命令行",
+               "label" : "编译成功后执行以下命令行（每组1行）",
+               "punion" : "open",
+               "skin" : "primary",
+               "type" : "checkbox"
+            },
+            {
+               "id" : "命令行文本",
+               "label" : "命令行文本（每组1行）",
+               "placeholder" : "具体命令行相关帮助请查看上方的相关说明",
+               "type" : "textarea",
+               "union" : "open",
+               "value" : ""
+            },
+            {
+               "label" : "内置程序调用示例（可根据需要将下方内容填写到命令行文本中）",
+               "text" : "<p>使用UPX压缩：{p}upx.exe --lzma {f}{h}</p><p>删除易程序隐藏窗口与修正dll引用：{p}处理易程序.exe {f}{h}&nbsp&nbsp&nbsp&nbsp&nbsp&nbspBy:梦优勿扰 提供</p><p>    &nbsp&nbsp&nbsp&nbsp<b>注：该条命令需要放入到upx压缩的前面</b></p>",
+               "type" : "card"
+            }
+         ]
+      }
+   ],
+   "title" : "智能编译"
+}

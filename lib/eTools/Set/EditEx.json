@@ -1,0 +1,205 @@
+{
+    "title": "代码框扩展",
+    "tab": [{
+            "label": "基本设置",
+            "value": [{
+                    "type": "checkbox",
+                    "skin": "primary",
+                    "id": "符号补齐",
+                    "label": "符号补齐（自动补齐 ()、“”、{}、[] 提高编写速度）",
+                    "checked": "checked"
+                },
+                {
+                    "type": "checkbox",
+                    "skin": "primary",
+                    "id": "智能补齐",
+                    "label": "智能补齐（智能判断 ()、[] 补齐的位置）"
+                },
+                {
+                    "type": "checkbox",
+                    "skin": "primary",
+                    "id": "选中补齐符号",
+                    "label": "选中内容输入符号自动补全（支持 ()、“”、{}、[] 符号）",
+                    "checked": "checked",
+                    "a": {
+                        "label": "查看",
+                        "href": "http://e.125.la/e.php?demo=d13",
+                        "placeholder": "点击查看效果"
+                    }
+                },
+                {
+                    "type": "checkbox",
+                    "skin": "primary",
+                    "id": "输入命令执行编译当前行",
+                    "hide": "hide",
+                    "label": "输入命令按下<font color='red'>空格</font>后执行编译当前行，并置光标到命令第一个参数内"
+                },
+                {
+                    "type": "checkbox",
+                    "skin": "primary",
+                    "id": "替换命令图标",
+                    "label": "替换命令显示图标",
+                    "checked": "checked",
+                    "restart": "restart",
+                    "a": {
+                        "label": "查看",
+                        "href": "http://e.125.la/e.php?demo=d1",
+                        "placeholder": "点击查看效果"
+                    }
+                },
+                {
+                    "type": "checkbox",
+                    "skin": "primary",
+                    "id": "转义符",
+                    "label": "引号转义",
+                    "a": {
+                        "label": "查看",
+                        "href": "http://e.125.la/e.php?demo=d7",
+                        "placeholder": "点击查看效果"
+                    }
+                },
+                {
+                    "type": "checkbox",
+                    "skin": "primary",
+                    "id": "16进制转换",
+                    "label": "16进制(0xXXXX)转换",
+                    "a": {
+                        "label": "查看",
+                        "href": "http://e.125.la/e.php?demo=d8",
+                        "placeholder": "点击查看效果"
+                    }
+                },
+                {
+                    "type": "checkbox",
+                    "skin": "primary",
+                    "id": "简化运算符转换",
+                    "label": "简化运算符转换(++ -- += -= *= /=)",
+                    "a": {
+                        "label": "查看",
+                        "href": "http://e.125.la/e.php?demo=d12",
+                        "placeholder": "点击查看效果"
+                    }
+                },
+                {
+                    "type": "checkbox",
+                    "skin": "primary",
+                    "id": "括号选中高亮",
+                    "label": "括号点击选中高亮（支持()、[]、{}的高亮）",
+                    "restart": "restart",
+                    "punion": "open"
+                },
+                {
+                    "type": "color",
+                    "label": "括号文本颜色",
+                    "id": "括号文本颜色",
+                    "placeholder": "高亮括号的文本颜色（HTML颜色格式）",
+                    "punion": "open",
+                    "value": "#FFFFFF"
+                },
+                {
+                    "type": "color",
+                    "label": "括号背景颜色",
+                    "punion": "open",
+                    "id": "括号背景颜色",
+                    "placeholder": "高亮括号的背景颜色（HTML颜色格式）",
+                    "value": "#0088FF"
+                },
+                {
+                    "type": "text",
+                    "label": "滚轮滚动行数",
+                    "id": "滚轮滚动行数",
+                    "minvalue": "1",
+                    "maxvalue": "125",
+                    "placeholder": "鼠标滚轮滚动代码框的代码行数，默认1行，根据需求自行调整",
+                    "value": "1"
+                },
+                {
+                    "type": "checkbox",
+                    "skin": "primary",
+                    "id": "自动添加输出命令",
+                    "label": "选中内容后回车自动添加输出命令",
+                },
+                {
+                    "type": "select",
+                    "id": "输出命令",
+                    "label": "输出命令",
+                    "value": [{
+                            "text": "输出调试文本",
+                            "value": "0"
+                        },
+                        {
+                            "text": "调试输出",
+                            "value": "1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "快捷键配置",
+            "value": [{
+                "type": "table",
+                "checkbox": "checkbox",
+                "checked": "checked",
+                "label": "插件快捷键启用与说明",
+                "value": [
+                    [
+                        "开启",
+                        "快捷键",
+                        "功能描述"
+                    ],
+                    [
+                        "快捷键_F1",
+                        "F1",
+                        "展开当前命令参数"
+                    ],
+                    [
+                        "快捷键_F12",
+                        "F12",
+                        "跳到定义处"
+                    ],
+                    [
+                        "快捷键_ESC",
+                        "Esc",
+                        "收缩当前命令参数[配合F1使用]"
+                    ],
+                    [
+                        "快捷键_Tab",
+                        "Tab",
+                        "在命令参数内按TAB键，自动切换到下一个参数"
+                    ],
+                    [
+                        "快捷键_Ctrl_X",
+                        "Ctrl + X",
+                        "剪切光标所在行代码"
+                    ],
+                    [
+                        "快捷键_Ctrl_D",
+                        "Ctrl + D",
+                        "复制当前行到下一行"
+                    ],
+                    [
+                        "快捷键_Alt_↑",
+                        "Alt + ↑",
+                        "将当前行代码上移一行"
+                    ],
+                    [
+                        "快捷键_Alt_↓",
+                        "Alt + ↓",
+                        "将当前行代码下移一行"
+                    ],
+                    [
+                        "快捷键_Alt_Z",
+                        "Alt + Z",
+                        "全选当前光标所在子程序与代码(含子程序头部)"
+                    ],
+                    [
+                        "快捷键_Alt_X",
+                        "Alt + X",
+                        "全选当前光标所在子程序的代码(不含子程序头部)"
+                    ]
+                ]
+            }]
+        }
+    ]
+}

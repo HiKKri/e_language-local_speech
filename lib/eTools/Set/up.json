@@ -1,0 +1,34 @@
+{
+	"title" : "检测更新",
+	"option" : [
+				{
+					"type" : "button",
+					"id" : "检测更新",
+					"label" : "检测并更新【正式版】",
+					"event" : "run",
+					"param" : "lib/eTools/up.exe 0"
+				},{
+					"type" : "button",
+					"id" : "检测更新1",
+					"label" : "检测并更新【测试版】",
+					"event" : "run",
+					"param" : "lib/eTools/up.exe 1"
+				},{
+					"type" : "quote",
+					"skin" : "gray",
+					"text" : "当前为【<label class = 'layui-bg-red'>正式版</label>】版本号：3.4.520 正式版"
+				},{
+					"type" : "hr"
+				},{
+					"type" : "card",
+					"label" : "更新说明",
+					"text" : "<p>1、更新后如果出现一些bug，请参考关于里面的内容排除问题；</p><p>2、更新失败，请检查易语言跟助手相关的程序是否关闭，再次尝试检测更新；</p><p>3、根据你当前使用的版本，点击对应的检测更新按钮；</p><br>注：测试版主要以功能测试为主，但可能会出现一些问题！建议优先使用正式版，如果在群内收到邀请体验测试版后，再行使用；如点击按钮无法更新，请加群联系我们！<br><br><font color=red>提醒：如果检测并更新一直提示无更新内容，请暂时关闭杀毒软件后，再尝试！</font>"
+				},{
+					"type" : "button",
+					"id" : "查看更新日志",
+					"label" : "查看更新日志",
+					"event" : "run",
+					"param" : "lib/eTools/Data/Update.log"
+				}
+	]
+}

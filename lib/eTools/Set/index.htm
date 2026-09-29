@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="GBK">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>易语言助手设置</title>
+	<link rel="stylesheet" href="layui/css/layui.css">
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+	<div class="layui-header">
+		<div class="layui-logo">易语言助手设置</div>
+		<!-- <ul class="layui-nav" id="config" lay-filter="" style="text-align: right;">
+			<li class="layui-nav-item">
+				<a href="javascript:;">配置保存与更新</a>
+				<dl class="layui-nav-child">
+					<dd><a href="javascript:;" name="自动检测更新">自动检测更新</a></dd>
+					<hr>
+					<dd>
+						<a href="javascript:;" name="配置保存位置" value="0">
+							<span class="layui-icon">&#xe605;</span>
+							保存到注册表中
+						</a>
+					</dd>
+					<dd>
+						<a href="javascript:;" name="配置保存位置" value="1">
+							<span class="layui-icon">&#xe605;</span>
+							保存到配置文件
+						</a>
+					</dd>
+				</dl>
+			</li>
+		</ul> -->
+		<div class="layui-form" id="autoUpdate">
+			<input type="checkbox" id="自动检测更新" lay-skin="switch" lay-text="每次检查更新|每天检查更新"/>&nbsp;
+		</div>
+	</div>
+
+	<div class="layui-side layui-bg-black">
+		<div class="layui-side-scroll">
+			<ul id="nav" class="layui-nav layui-nav-tree" lay-filter="test">
+				<li class="layui-nav-item layui-this" data-name="Basic">
+					<a href="javascript:;">
+						<span class="layui-icon">&#xe716;</span>
+						基本设置
+					</a>
+				</li>
+				<li class="layui-nav-item" data-name="PluginList">
+					<a href="javascript:;">
+						<span class="layui-icon">&#xe63c;</span>
+						插件列表
+					</a>
+				</li>
+
+				<!-- loadHtml、clickButton -->
+				<li class="layui-nav-item" data-name="plugin" data-type="loadHtml">
+					<a href="javascript:;">
+						<span class="layui-icon">&#xe63c;</span>
+						插件中心
+					</a>
+				</li>
+
+				<li class="layui-nav-item" data-name="up" data-type="loadHtml">
+					<a href="javascript:;">
+                        <span class="layui-icon">&#xe601;</span>
+                        检测更新
+                        <span class="layui-badge-dot" id="is_update" style="display: none;"></span>
+					</a>
+				</li>
+
+				<li class="layui-nav-item" data-name="about" id="about">
+					<a href="javascript:;">
+						<span class="layui-icon">&#xe60b;</span>
+						关于助手
+					</a>
+				</li>
+			</ul>
+
+			<div class="layui-form" id="windowTop">
+				<input type="checkbox" id="窗口置顶" title="窗口置顶" lay-skin="primary" />
+			</div>
+		</div>
+	</div>
+
+	<div class="layui-body _iframe">
+		<iframe id="_iframe" name="_iframe" src="" frameborder="0" width="100%" height="100%" scrolling="yes"></iframe>
+	</div>
+</div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="layui/layui.js"></script>
+<script type="text/javascript">
+
+layui.use('slider', function(){
+  var $ = layui.$
+  ,slider = layui.slider;
+  //默认滑块
+  slider.render({
+    elem: '#slideTest1'
+  });
+});
+
+var form,_iframe;
+layui.use('element', function(){
+	var element = layui.element;
+});
+
+layui.use("form", function(){
+	form = layui.form;
+
+	form.on("checkbox", function(data){
+		if(data.elem.id == '窗口置顶') {
+			saveGlobalData(this.id, data.elem.checked ? "真" : "假");
+		}
+	});
+
+	form.on("switch", function(data){
+		saveGlobalData(this.id, data.elem.checked ? "真" : "假");
+	});
+
+	$("#nav>li,#about").click(function(event) {
+		var src = $(this).attr("data-name");
+		var type = $(this).attr("data-type");
+		var name = $(this).attr("data-name");
+		if (type == 'clickButton'){
+			clickButton(name);
+		}else{
+			// SendMsg1("Switch", src);
+			Load(src);
+		}
+
+		if (src == 'about') {
+			$("#nav>li").removeClass("layui-this");
+			$("#about").addClass("layui-this");
+
+		}else{
+			$("#about").removeClass("layui-this");
+		}
+	});
+
+	$("#config>li>dl>dd").click(function(e) {
+		var name = $(this).find("a").attr("name")
+			,value = $(this).find("a").attr("value")
+			,checked = $(this).find("a>span").length>0;
+		if (name == '配置保存位置') {
+			$("#config>li>dl>dd a[name='"+name+"']").each(function(index, el) {
+				$(el).find("span").remove();
+			});
+			$(this).find("a").prepend('<span class="layui-icon">&#xe605;</span> ');
+			saveGlobalData(name, value);
+
+		} else if (name == '自动检测更新') {
+			if (checked) {
+				$(this).find("a>span").remove();
+				value = "假";
+			}else{
+				$(this).find("a").prepend('<span class="layui-icon">&#xe605;</span> ');
+				value = "真";
+			}
+			saveGlobalData(name, value);
+		}
+		$(this).removeClass("layui-this");
+	});
+
+	$("input[type=checkbox]").each(function(index, e) {
+		if ($(e).hasClass('layui-hide')) {
+			$(e).parent().hide();
+
+		}else{
+			var checked = $(e).attr("checked");
+			if (typeof(checked) == 'undefined' || checked=='' || checked=='false') {
+				checked = "false";
+			}else{
+				checked = "true";
+			}
+			var value = readGlobalData("checkbox", e.id, checked);
+			if (value == 'true') {
+				e.checked = true;
+			}else{
+				e.checked = false;
+			}
+		}
+	});
+	form.render("checkbox");
+
+	Load('Basic');
+	document.onselectstart = new Function('event.returnValue=false;');
+	_iframe = $("#_iframe")[0].contentWindow;
+
+	$("#_iframe")[0].onload = function(){
+		$(_iframe.document).find("a").click(function() {
+			SendMsg1("Url", $(this).attr("href"));
+			return false;
+		});
+	};
+});
+
+function loadIframe(src) {
+	var src = 'temp/'+src+'.htm';
+	$("iframe").attr("src", src);
+}
+
+function SendMsg1(funName, param1, param2, param3) {
+	// 查看调用来源
+	// console.log(SendMsg1.caller);
+	if (typeof(param1) == 'undefined') {
+		param1 = '';
+	}
+	if (typeof(param2) == 'undefined') {
+		param2 = '';
+	}
+	if (typeof(param3) == 'undefined') {
+		param3 = '';
+	}
+	SendMsg(funName, param1, param2, param3);
+}
+
+function is_update(is_update)
+{
+    if (is_update) {
+        $("#is_update").show();
+    } else {
+        $("#is_update").hide();
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+::-webkit-scrollbar {
+	background: #e7ecf0;
+	overflow: visible;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	opacity: 1;
+	-webkit-transition: opacity .2s linear;
+}
+::-webkit-scrollbar-thumb {
+    background: #bac9d3;
+    border-radius: 5px;
+}
+
+body {
+	cursor: default;
+	font-size: 13px;
+	color: #5d7388;
+	overflow-y: hidden;
+	display: block;
+	padding:0px;
+	margin: 0px;
+	height: 100%;
+	font-family: '微软雅黑', 'Microsoft Yahei', Tahoma, 'Segoe UI', Arial, Simsun, sans-serif;
+}
+input,textarea{
+	color: #888 !important;
+}
+td{
+	line-height: 25px;
+}
+.container-fluid{
+	padding: 0px;
+}
+.update{
+	position: absolute;
+	top: 7px;
+	right: 10px;
+}
+#main-header {
+	position: fixed;
+	width: 100%;
+	height: 50px;
+	border-bottom: #e8ecef solid 1px;
+	background: #fff;
+	z-index: 9999;
+}
+#main-header h1 {
+    color: #728597;
+    margin-left: 115px;
+    font-weight: normal;
+
+}
+#main-header h1.title {
+	position: absolute;
+	top: 0px;
+	left: 15px;
+	font-size: 2em;
+	-webkit-margin-before: 0.36em;
+	-webkit-margin-after: 0.67em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	font-weight: 400;
+}
+
+#main-header .savemsg {
+	position: absolute;
+	z-index: 20;
+	top: 13px;
+	left:60%;
+	background: #39f;
+	padding: 3px 12px;
+	color: #fff;
+	border-radius: 3px;
+	opacity: 1;
+	-webkit-transition: opacity 200ms ease-in-out;
+}
+
+#navbar-container {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 51px;
+	padding-top: 20px;
+	width: 189px;
+	z-index: 2;
+	-webkit-border-end: 1px solid #e8ecef;
+	background: #f8fafb;
+}
+
+.navbar-bg {
+	position: absolute;
+	z-index: 10;
+	right: 0;
+	width: 100%;
+}
+#navbar {
+    -webkit-padding-start: 0;
+    margin: 0;
+}
+#searchPageNav {
+    -webkit-padding-start: 20px;
+    display: none;
+}
+.navbar-item {
+	position: relative;
+	color: #5d7388;
+	cursor: pointer;
+	display: block;
+	font-size: 105%;
+	outline: none;
+	padding: 7px 0;
+	text-align: end;
+	-webkit-padding-end: 24px;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.navbar-item-selected {
+	-webkit-box-shadow: 0px 1px 0px #f7f7f7;
+	background: #54c11a;
+	right: -1px;
+	color: #fff;
+}
+
+.navbar-item:not(.navbar-item-selected):hover {
+    color: #54c11a;
+}
+
+.navbar-item:not(.navbar-item-selected):hover::after {
+	position: absolute;
+	right: -1px;
+	top: 0;
+	height: 100%;
+	width: 4px;
+	content: '';
+	background: #54c11a;
+}
+iframe{
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+}
+
+.content{
+	position: relative;
+}
+.content ._left{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.content ._iframe{
+	position: absolute;
+	left: 195px;
+	top: 55px;
+	height: 465px;
+	width: 695px;
+}
+.checkbox textarea{
+	margin-top: 5px;
+}
+
+legend{
+	font-weight: bold !important;
+	color: #728597;
+}
+
+legend .checkbox label{
+	font-weight: bold !important;
+	color: #728597;
+}
+
+label{
+	font-weight: 400 !important;
+}
+select{
+	color: #888 !important;
+}
+
+.input-group{
+	margin-bottom: 15px !important;
+}
+select{
+	height: 26px !important;
+	line-height: 26px !important;
+}
+div.notes{
+	padding: 10px 20px;
+	margin-bottom: 15px;
+	border: 1px solid #eee;
+	border-left-width: 5px;
+	border-radius: 3px;
+}
+div.notes h4{
+	font-size: 16px;
+}
+div.notes p{
+	text-indent:2em;
+	color:#888;
+}
+code{
+	color: white;
+	background-color: #E7254e;
+	padding: 2px 4px 0px 4px;
+}
+td .checkbox{
+	margin: 0px;
+}
+.bg-info {
+	padding: 10px;
+	border-radius: 5px;
+}
+.w100{
+	min-width: 100px;
+	text-align: right;
+}
+.w120{
+	min-width: 120px;
+	text-align: right;
+}
+.w130{
+	min-width: 130px;
+	text-align: right;
+}
+.w140{
+	min-width: 140px;
+	text-align: right;
+}
+.w150{
+	min-width: 150px;
+	text-align: right;
+}
+.label-success{
+	display: inline-block;
+	font-size: 12px;
+	margin-top: 5px;
+	padding: 5px 5px 5px 5px;
+}
+.layui-form-pane .layui-form-label{
+	width: 150px !important;
+}
+.layui-form-pane .layui-input-inline{
+	width: 70% !important;
+}
+.restart .layui-unselect span{
+	color: #FF3300 !important;
+}
+.restart a{
+	position: absolute;
+	top: 8px;
+}

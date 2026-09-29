@@ -1,0 +1,31 @@
+{
+	"title" : "自动保存与保存",
+	"option":[{
+				"type" : "button",
+				"id" : "打开词库",
+				"label" : "打开词库"
+			},{
+				"type" : "hr"
+			},{
+				"type" : "checkbox",
+				"skin" : "primary",
+				"id" : "词库_启用",
+				"label" : "启用词库"
+			},{
+				"type" : "checkbox",
+				"skin" : "primary",
+				"id" : "词库_加载API",
+				"label" : "启用API词库"
+			},{
+				"type" : "checkbox",
+				"skin" : "primary",
+				"id" : "词库_加载常量",
+				"label" : "启用常量词库"
+			},{
+				"type" : "checkbox",
+				"skin" : "primary",
+				"id" : "词库_加载子程序",
+				"label" : "启用子程序词库"
+			}
+		]
+}

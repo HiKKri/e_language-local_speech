@@ -1,0 +1,55 @@
+{
+	"title" : "命令英化插件",
+	"option" : [
+		{
+			"type" : "button",
+			"id" : "打开自定义文档目录",
+			"event" : "run",
+			"param" : "lib\eTools\Plugin\Anglicized",
+			"label" : "打开自定义文档目录"
+		},{
+			"type" : "separate",
+			"color" : "#FF6633",
+			"label" : "以下配置更改后需要重启易语言才能生效"
+		},{
+			"type" : "checkbox",
+			"skin" : "primary",
+			"id" : "开启自定义英化",
+			"restart" : "restart",
+			"label" : "英化 - 开启自定义英化（加载本地自定义英化文档，稍微会有卡顿情况）"
+			
+		},{
+			"type" : "checkbox",
+			"skin" : "primary",
+			"id" : "英化命令",
+			"label" : "英化 - 支持库命令",
+			"checked" : "checked"
+		},{
+			"type" : "checkbox",
+			"skin" : "primary",
+			"id" : "英化数据类型",
+			"label" : "英化 - 支持库数据类型",
+			"checked" : "checked"
+		},{
+			"type" : "checkbox",
+			"skin" : "primary",
+			"id" : "英化常量",
+			"label" : "英化 - 支持库常量",
+			"checked" : "checked"
+		},{
+			"type" : "separate",
+			"label" : "Tip：下方留空或上方不勾选则不英化，填 * 号则英化所有库！"
+		},{
+			"type" : "textarea",
+			"label" : "英化支持库名单，以下支持库将会被英化:(一行一个,填写支持库的名称，如 系统核心支持库） ",
+			"id" : "英化名单",
+			"value" : "系统核心支持库",
+			"placeholder" : "支持库名称，可在支持库列表中查看，如：系统核心支持库 ； 快捷添加方法为：右键【工作夹】中的【支持库】子夹中的支持库，选择【英化该支持库】即可",
+			"rows" : 8
+		},{
+			"type" : "quote",
+			"skin" : "gray",
+			"text" : "注1：如果你开启了自定义英化并更改过自定义的英化文件，该库后期升级增加了新的命令了，则需要你手动将该命令添加到文件中，否则是不会执行 新增命令 的英化操作！ <br>注2：开启本插件后，会自动在【lib\eTools\Plugin\Anglicized】里面以支持库的文件名建立最少3个的txt文件，如：<br>系统核心支持库_ml.txt，可以在这个文件里面更改核心库命令的英化数据 <br> 系统核心支持库_lx.txt，可以在这个文件里面更改核心库数据类型的英化数据 <br> 系统核心支持库_cl.txt，可以在这个文件里面更改核心库常量的英化数据"
+		}
+	]
+}

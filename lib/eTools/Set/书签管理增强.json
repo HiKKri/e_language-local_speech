@@ -1,0 +1,29 @@
+{
+	"title" : "书签管理增强",
+	"option" : [
+		{
+			"type" : "select",
+			"label" : "管理窗口位置",
+			"id" : "管理窗口位置",
+			"value" : [
+				{
+					"text" : "Ctrl+F7弹出显示",
+					"value" : "0",
+					"selected" : "selected"
+				},{
+					"text" : "状态夹显示",
+					"value" : "1"
+				}
+			]
+		},{
+			"type" : "checkbox",
+			"skin" : "primary",
+			"id" : "窗口关闭后自动弹出",
+			"label" : "书签窗口跳转关闭后自动弹出 (如果是状态夹显示则无效)"
+		},{
+			"type" : "quote",
+			"skin" : "gray",
+			"text" : "注：切换窗口管理位置需重启生效；"
+		}
+	]
+}
